@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+function Input({ value, setValue }) {
+
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+
+  return (
+    <input type="text" value={value} onChange={handleChange} />
+  );
+}
+
+function Form() {
+
+  const [value, setValue] = React.useState('');
+
+  function handleSubmit(evt) {
+    evt.preventDefault()
+    alert(value)
+  }
+
+  function handleReset() {
+    setValue('');
+  }
+
+  return (
+    <form name='a-form' onSubmit={handleSubmit}>
+      <Input value={value} setValue={setValue} />
+      <button type='submit'>Submit</button>
+      <button type='button' onClick={handleReset}>Reset</button>
+    </form>
+  )
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form />
     </div>
   );
 }
