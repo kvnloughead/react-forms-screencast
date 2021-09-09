@@ -1,29 +1,8 @@
 import React from 'react';
 import './App.css';
 
-function Input() {
-  const [value, setValue] = React.useState('');
+import Input from './Input';
 
-  function handleChange(e) {
-    setValue(e.target.value);
-  }
-
-  function handleDisplay() {
-    alert(value);
-  }
-
-  function handleReset() {
-    setValue('');
-  }
-
-  return (
-    <>
-      <input type="text" value={value} onChange={handleChange} />
-      <button onClick={handleDisplay}>Display</button>
-      <button onClick={handleReset}>Reset</button>
-    </>
-  );
-}
 function App() {
   return (
     <div className="App">
