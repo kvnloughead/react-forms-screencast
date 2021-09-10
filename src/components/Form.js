@@ -5,7 +5,8 @@ import Input from './Input';
 function Form() {
   const [value, setValue] = React.useState('');
 
-  function handleDisplay() {
+  function handleDisplay(evt) {
+    evt.preventDefault();
     alert(value);
   }
 
@@ -13,7 +14,7 @@ function Form() {
     setValue('');
   }
   return (
-    <form>
+    <form onSubmit={handleDisplay}>
       <Input value={value} setValue={setValue} />
       <button type='button' onClick={handleDisplay}>Display</button>
       <button type='button' onClick={handleReset}>Reset</button>
