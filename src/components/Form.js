@@ -3,6 +3,8 @@ import React from 'react';
 import Input from './Input';
 
 function Form() {
+  const [value, setValue] = React.useState('');
+
   function handleDisplay() {
     alert(value);
   }
@@ -12,7 +14,7 @@ function Form() {
   }
   return (
     <form>
-      <Input />
+      <Input value={value} setValue={setValue} />
       <button type='button' onClick={handleDisplay}>Display</button>
       <button type='button' onClick={handleReset}>Reset</button>
     </form>
