@@ -3,9 +3,18 @@ import React from 'react';
 import Input from './Input';
 
 function Form() {
+  function handleDisplay() {
+    alert(value);
+  }
+
+  function handleReset() {
+    setValue('');
+  }
   return (
     <form>
       <Input />
+      <button type='button' onClick={handleDisplay}>Display</button>
+      <button type='button' onClick={handleReset}>Reset</button>
     </form>
   );
 }
