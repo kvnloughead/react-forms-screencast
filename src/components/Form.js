@@ -16,7 +16,7 @@ function Form() {
   return (
     <form onSubmit={handleDisplay}>
       <Input value={value} setValue={setValue} />
-      <button type='button' onClick={handleDisplay}>Display</button>
+      <button>Display</button>
       <button type='button' onClick={handleReset}>Reset</button>
     </form>
   );
