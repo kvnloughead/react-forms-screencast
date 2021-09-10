@@ -18,8 +18,8 @@ function Input() {
   return (
     <>
       <input type="text" value={value} onChange={handleChange} />
-      <button onClick={handleDisplay}>Display</button>
-      <button onClick={handleReset}>Reset</button>
+      <button type='button' onClick={handleDisplay}>Display</button>
+      <button type='button' onClick={handleReset}>Reset</button>
     </>
   );
 }
